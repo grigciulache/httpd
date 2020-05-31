@@ -21,11 +21,14 @@ pipeline{
             }
         }
         stage('Push image'){
-            echo 'Push image on docker hub'
+            steps{
+                    echo 'Push image on docker hub'
+            }   
         }
         stage('Run Application'){
-            echo 'Run Application'
+            steps{
+                    echo 'Run Application'
+            }   
         }
-
     }
 }
