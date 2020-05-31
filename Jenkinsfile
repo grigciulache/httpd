@@ -36,7 +36,9 @@ pipeline{
         stage('Run Application'){
             steps{
                     echo 'Run Application'
-                    powershell label: '', script: 'hello.ps1'
+                    //powershell label: '', script: 'hello.ps1' -KO
+                    powershell label: '', script: 'Write-Host \'Hello, World!\''
+
             }   
         }
     }
