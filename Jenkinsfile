@@ -4,6 +4,7 @@ pipeline{
         stage("git clone"){
             steps{
                 echo 'test git'
+                git 'https://github.com/grigciulache/httpd.git'
             }
         }
         stage("build"){
