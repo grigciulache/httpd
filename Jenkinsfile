@@ -38,7 +38,7 @@ pipeline{
                     echo 'Run Application'
                     //powershell label: '', script: 'hello.ps1' -KO
                     powershell label: '', script: 'Write-Host \'Hello, World!\''
-
+                    powershell label: '', script: hello.ps1
             }   
         }
     }
