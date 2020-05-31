@@ -23,9 +23,11 @@ pipeline{
         stage('Push image'){
             steps{
                     echo 'Push image on docker hub'
+                    script{
                     docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
                                         app.push("${env.BUILD_NUMBER}")
                     } 
+                    }
             }   
         }
         stage('Run Application'){
