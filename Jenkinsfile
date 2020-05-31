@@ -36,6 +36,7 @@ pipeline{
         stage('Run Application'){
             steps{
                     echo 'Run Application'
+                    
             }   
         }
     }
