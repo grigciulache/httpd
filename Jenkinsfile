@@ -20,12 +20,16 @@ pipeline{
                 }
             }
         }
-        stage("push on docker hub"){
+        stage('Deploy Image on docker hub') {
             steps{
-                echo 'test push'
-            }
+                script {
+                            docker.withRegistry( '', registryCredential ) {
+                            dockerImage.push()
+          }
         }
-        stage("run application"){
+      }
+    }
+        stage("Run application"){
             steps{
                 echo 'test run'
             }
