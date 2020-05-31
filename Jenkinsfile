@@ -16,13 +16,16 @@ pipeline{
             steps{
                 echo 'test biuld'
                 script {
-                            docker.build registry + ":$BUILD_NUMBER"
+                        app = docker.build("grigciulache/httpd")
                 }
             }
         }
         stage('Push image'){
             steps{
                     echo 'Push image on docker hub'
+                    docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
+                                        app.push("${env.BUILD_NUMBER}")
+                    } 
             }   
         }
         stage('Run Application'){
