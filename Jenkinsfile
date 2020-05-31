@@ -1,9 +1,9 @@
 pipeline{
 
     environment {
-    registry = "grigciulache/httpd"
-    registryCredential = 'dockerhub'
-  } 
+        registry = "grigciulache/httpd"
+        registryCredential = 'dockerhub'
+    } 
     agent any
     stages{
         stage("Git clone"){
@@ -40,5 +40,4 @@ pipeline{
                 echo 'test run'
             }
         }
-    }
 }
