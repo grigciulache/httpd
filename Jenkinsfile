@@ -37,9 +37,9 @@ pipeline{
             steps{
                     echo 'Run Application'
                     //powershell label: '', script: 'hello.ps1' ->KO
-                    //powershell label: '', script: 'Write-Host \'Hello, World!\''
+                    powershell label: '', script: 'Write-Host \'Hello, World!\''
                     //powershell label: '', script: hello.ps1 ->KO
-                    powershell -File hello.ps1
+                    //powershell -File hello.ps1 ->KO
             }   
         }
     }
