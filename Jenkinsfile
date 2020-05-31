@@ -14,9 +14,10 @@ pipeline{
         }
         stage("Build image"){
             steps{
-                echo 'test biuld'
+                echo 'test bild'
                 script {
-                        app = docker.build("grigciulache/httpd")
+                        //app = docker.build("grigciulache/httpd")
+                        app = docker.build(registry)
                 }
             }
         }
