@@ -20,13 +20,11 @@ pipeline{
                 }
             }
         }
+        /*
         stage('Deploy Image on docker hub') {
             steps{
                 script {
-                        /*
-                            docker.withRegistry( '', registryCredential ) {
-                            dockerImage.push()
-                        */
+                       
                             docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
                                 app.push("${env.BUILD_NUMBER}")
                                 app.push("latest")
@@ -34,10 +32,10 @@ pipeline{
                 }
             }
         }
-    }
         stage("Run application"){
             steps{
                 echo 'test run'
             }
         }
+        */
 }
