@@ -1,15 +1,23 @@
 pipeline{
+
+    environment {
+    registry = "grigciulache/httpd"
+    registryCredential = 'dockerhub'
+  } 
     agent any
     stages{
-        stage("git clone"){
+        stage("Git clone"){
             steps{
-                echo 'test git'
+                echo 'Git clone'
                 git 'https://github.com/grigciulache/httpd.git'
             }
         }
-        stage("build"){
+        stage("Build image"){
             steps{
                 echo 'test biuld'
+                script {
+                            docker.build registry + ":$BUILD_NUMBER"
+                }
             }
         }
         stage("push on docker hub"){
