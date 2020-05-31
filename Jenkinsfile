@@ -26,7 +26,7 @@ pipeline{
             steps{
                     echo 'Push image on docker hub'
                     script{
-                        docker.withRegistry('https://registry.hub.docker.com', registryCredential) {
+                        docker.withRegistry('', registryCredential) {
                             app.push("${env.BUILD_NUMBER}")
                         } 
                     }
