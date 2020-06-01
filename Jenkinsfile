@@ -18,6 +18,7 @@ pipeline{
             steps{
                     echo 'Run Application'      
                      powershell label: '', script: '''$ErrorActionPreference =      \'SilentlyContinue\'
+                     docker-compose down --volumes
                      docker-compose up -d
                      '''    
             }
