@@ -41,7 +41,6 @@ pipeline{
                     docker stop apache
                     docker rm apache
                     docker run -d -p 8089:80 --name apache apache'''
-            }   
         }
     }
 }
