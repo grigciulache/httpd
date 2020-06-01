@@ -13,6 +13,7 @@ pipeline{
                 git projectGit
             }
         }
+        /*
         stage("Build image"){
             steps{
                 echo 'test bild'
@@ -33,6 +34,7 @@ pipeline{
                     }
             }   
         }
+        */
         stage('Run Application'){
             steps{
                     echo 'Run Application'      
