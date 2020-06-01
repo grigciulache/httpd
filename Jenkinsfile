@@ -36,10 +36,11 @@ pipeline{
         stage('Run Application'){
             steps{
                     echo 'Run Application'
-                    //powershell label: '', script: 'hello.ps1' ->KO
-                    powershell label: '', script: 'Write-Host \'Hello, World!\''
-                    //powershell label: '', script: hello.ps1 ->KO
-                    //powershell -File hello.ps1 ->KO
+                    powershell label: '', script: '''$ErrorActionPreference = \'SilentlyContinue\'
+                    docker build -t apache .
+                    docker stop apache
+                    docker rm apache
+                    docker run -d -p 8089:80 --name apache apache'''
             }   
         }
     }
